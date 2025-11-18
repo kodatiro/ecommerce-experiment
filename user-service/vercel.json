@@ -1,0 +1,12 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "env": {
+    "POSTGRES_URL": "@postgres_url_user",
+    "POSTGRES_PRISMA_URL": "@postgres_prisma_url_user",
+    "POSTGRES_URL_NON_POOLING": "@postgres_url_non_pooling_user",
+    "JWT_SECRET": "@jwt_secret"
+  }
+}

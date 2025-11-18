@@ -1,0 +1,11 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "env": {
+    "NEXT_PUBLIC_PRODUCT_SERVICE_URL": "@product_service_url",
+    "NEXT_PUBLIC_ORDER_SERVICE_URL": "@order_service_url",
+    "NEXT_PUBLIC_USER_SERVICE_URL": "@user_service_url"
+  }
+}
