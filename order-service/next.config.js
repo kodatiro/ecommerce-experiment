@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Instrumentation is enabled automatically when instrumentation.ts exists
+  experimental: {
+    instrumentationHook: true,
+  },
 }
 
 module.exports = nextConfig
