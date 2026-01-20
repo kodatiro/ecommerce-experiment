@@ -2,8 +2,8 @@
 const nextConfig = {
   experimental: {
     serverActions: true,
-    instrumentationHook: true,
   },
+  instrumentationHook: true,
   env: {
     PRODUCT_SERVICE_URL: process.env.PRODUCT_SERVICE_URL || 'http://localhost:3001',
     ORDER_SERVICE_URL: process.env.ORDER_SERVICE_URL || 'http://localhost:3002',

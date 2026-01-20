@@ -2,8 +2,8 @@
 const nextConfig = {
   experimental: {
     serverActions: true,
-    instrumentationHook: true,
   },
+  instrumentationHook: true,
 }
 
 module.exports = nextConfig
