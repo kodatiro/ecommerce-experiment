@@ -1,15 +1,9 @@
 import { registerOTel } from '@vercel/otel';
 
 export function register() {
+  console.log('[INSTRUMENTATION] Registering OpenTelemetry...');
   registerOTel({
     serviceName: 'ecommerce-product-service',
-    instrumentationConfig: {
-      fetch: {
-        propagateContextUrls: [
-          'database-service',
-          'vercel.app',
-        ],
-      },
-    },
   });
+  console.log('[INSTRUMENTATION] OpenTelemetry registered successfully');
 }
