@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverActions: true,
-  },
-  instrumentationHook: true,
+  // Instrumentation is enabled automatically when instrumentation.ts exists
   env: {
     PRODUCT_SERVICE_URL: process.env.PRODUCT_SERVICE_URL || 'http://localhost:3001',
     ORDER_SERVICE_URL: process.env.ORDER_SERVICE_URL || 'http://localhost:3002',
