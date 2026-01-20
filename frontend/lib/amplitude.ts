@@ -12,7 +12,7 @@ export const identifyUser = (userId: string, userProperties?: Record<string, any
   if (typeof window !== 'undefined') {
     amplitude.setUserId(userId);
     if (userProperties) {
-      amplitude.identify(userProperties);
+      amplitude.identify(userProperties as any);
     }
   }
 };
@@ -22,7 +22,7 @@ export const setUserProperty = (property: string, value: any) => {
   if (typeof window !== 'undefined') {
     const props: Record<string, any> = {};
     props[property] = value;
-    amplitude.identify(props);
+    amplitude.identify(props as any);
   }
 };
 

@@ -24,7 +24,7 @@ export default async function Home() {
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Featured Products</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.slice(0, 8).map((product: any) => (
+          {Array.isArray(products) && products.slice(0, 8).map((product: any) => (
             <ProductCard
               key={product.id}
               id={product.id}

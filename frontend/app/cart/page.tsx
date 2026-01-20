@@ -18,11 +18,12 @@ export default function CartPage() {
     setLoading(true);
     const response = await ApiClient.getCart(userId);
     if (response.success && response.data) {
-      setCartItems(response.data);
+      const cartData = Array.isArray(response.data) ? response.data : [];
+      setCartItems(cartData);
 
       // Fetch product details for each cart item
       const productMap = new Map();
-      for (const item of response.data) {
+      for (const item of cartData) {
         const productResponse = await ApiClient.getProduct(item.product_id);
         if (productResponse.success && productResponse.data) {
           productMap.set(item.product_id, productResponse.data);
@@ -31,11 +32,11 @@ export default function CartPage() {
       setProducts(productMap);
 
       // Track cart viewed
-      const total = response.data.reduce((sum: number, item: any) => {
+      const total = cartData.reduce((sum: number, item: any) => {
         const product = productMap.get(item.product_id);
         return sum + (product ? parseFloat(product.price) * item.quantity : 0);
       }, 0);
-      trackCartViewed(total, response.data.length);
+      trackCartViewed(total, cartData.length);
     }
     setLoading(false);
   };
@@ -108,7 +109,7 @@ export default function CartPage() {
       if (response.success) {
         // Track order completed with revenue
         trackOrderCompleted({
-          orderId: response.data?.id || 'unknown',
+          orderId: (response.data as any)?.id || 'unknown',
           total: total,
           itemCount: cartItems.length,
           items: orderItems.map((item) => {

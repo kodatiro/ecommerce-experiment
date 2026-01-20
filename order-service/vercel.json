@@ -2,12 +2,5 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "framework": "nextjs",
-  "regions": ["iad1"],
-  "env": {
-    "POSTGRES_URL": "@postgres_url_order",
-    "POSTGRES_PRISMA_URL": "@postgres_prisma_url_order",
-    "POSTGRES_URL_NON_POOLING": "@postgres_url_non_pooling_order",
-    "STRIPE_SECRET_KEY": "@stripe_secret_key",
-    "PRODUCT_SERVICE_URL": "@product_service_url"
-  }
+  "regions": ["iad1"]
 }

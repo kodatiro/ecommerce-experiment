@@ -16,7 +16,7 @@ export default function OrdersPage() {
     setLoading(true);
     const response = await ApiClient.getOrders(userId);
     if (response.success && response.data) {
-      setOrders(response.data);
+      setOrders(Array.isArray(response.data) ? response.data : []);
     }
     setLoading(false);
   };

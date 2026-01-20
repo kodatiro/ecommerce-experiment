@@ -24,7 +24,7 @@ export default function AdminPage() {
     setLoading(true);
     const response = await ApiClient.getProducts();
     if (response.success && response.data) {
-      setProducts(response.data);
+      setProducts(Array.isArray(response.data) ? response.data : []);
     }
     setLoading(false);
   };

@@ -7,7 +7,7 @@ export const revalidate = 0;
 
 export default async function ProductsPage() {
   const response = await ApiClient.getProducts();
-  const products = response.success && response.data ? response.data : [];
+  const products = response.success && response.data ? (Array.isArray(response.data) ? response.data : []) : [];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
